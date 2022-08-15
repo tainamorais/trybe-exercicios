@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, p, li {
+    text-align: center;
+}
+
+a, li {
+    text-decoration: none;
+    color: rgb(3, 73, 100);
+    font-weight: 600;
+}
+
+li {
+    list-style: none;
+    line-height: 2rem;
+}
+
+ol li{
+    transition: 0.2s all;
+}
+
+ol li:hover {
+    background-color: #fffea7;
+}
+
+ol li:active {
+    font-family: cursive;
+    font-size: 1.1rem;
+}
