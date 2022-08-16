@@ -30,7 +30,7 @@ nav {
     text-align: center;
 }
 
-li {
+nav li {
     list-style: none;
     display: inline-block;
     margin: 20px 20px;
@@ -128,4 +128,41 @@ img {
 .supersoco {
     padding: 50px 0px;
     margin: 0;
+}
+
+.supersoco p {
+    display: inline-block;
+    max-width: 400px;
+    vertical-align: top;
+    line-height: 2rem;
+}
+
+.supersoco img {
+    max-width: 300px;
+    margin: 40px 30px 20px 10px;
+}
+
+
+/* REFERENCES */
+.references {
+    background-color: #ffebcd;
+    margin: 0;
+    padding: 40px 10px;
+}
+
+.references li {
+    line-height: 2.5rem;
+    transition: 0.5s;
+}
+
+.references a {
+    color: #272727;
+}
+
+.references a:hover {
+    background-color: #f8d39b;
+}
+
+.references li:hover {
+    transform: scale(1.1);
 }
