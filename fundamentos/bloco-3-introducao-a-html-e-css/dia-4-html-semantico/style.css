@@ -15,7 +15,7 @@ body {
 
 header {
     text-align: center;
-    padding: 20px 0px;
+    padding: 40px 0px;
     font-size: 1.3rem;
     background-color: #15382a;
 }
@@ -33,7 +33,7 @@ nav {
 li {
     list-style: none;
     display: inline-block;
-    margin: 10px 20px;
+    margin: 20px 20px;
     font-size: 1.2rem;
 }
 
@@ -51,7 +51,7 @@ a {
 /* SECTION INFORMAÇÕES GERAIS */
 h2 {
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 3rem;
     margin: 50px 0;
     color: #964800;
 }
@@ -72,6 +72,7 @@ article > section {
     text-align: left;
     text-align: center;
     margin: auto;
+    line-height: 2rem;
 }
 
 img {
@@ -80,11 +81,11 @@ img {
 
 .general-info img {
     max-width: 300px;
-    margin: 30px 30px 40px 0px
+    margin: 40px 30px 70px 0px
 }
 
 .general-info div {
-    margin: 30px 0px;
+    margin: 50px 0px;
     display: inline-block;
     vertical-align: top;
 }
@@ -103,13 +104,28 @@ img {
 
 
 /* SUPERVISÃO */
+.supervisao {
+    background-color: #ffebcd;
+    padding: 50px 0px;
+    margin: 0;
+}
+
 .supervisao p {
     display: inline-block;
     max-width: 400px;
     vertical-align: top;
+    line-height: 2rem;
 }
 
 .supervisao img {
     max-width: 300px;
-    margin: 20px 10px 20px 30px;
+    margin: 40px 10px 20px 30px;
+}
+
+
+
+/* SUPERSOCO */
+.supersoco {
+    padding: 50px 0px;
+    margin: 0;
 }
