@@ -15,18 +15,18 @@ body {
 
 header {
     text-align: center;
-    color: ;
-    margin: 20px 0px;
+    padding: 20px 0px;
     font-size: 1.3rem;
+    background-color: #15382a;
 }
 
 h1 {
     font-family: 'Quantico', sans-serif;
-    color: #b95a00;
+    color: #dd6b00;
 }
 
 nav {
-    background-color: #15382a;
+    background-color: #0c2018;
     text-align: center;
 }
 
@@ -34,12 +34,14 @@ li {
     list-style: none;
     display: inline-block;
     margin: 10px 20px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: #f2f2f2;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
 }
 
 
