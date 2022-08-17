@@ -186,3 +186,16 @@ aside a {
 aside a:hover {
     background-color: #f8d39b;
 }
+
+
+/* FOOTER */
+footer {
+    background-color: #633000;
+    padding: 20px 0px;
+    color: #f2f2f2;
+    text-align: center;
+}
+
+footer a:hover {
+    color: #f8d39b;
+}
