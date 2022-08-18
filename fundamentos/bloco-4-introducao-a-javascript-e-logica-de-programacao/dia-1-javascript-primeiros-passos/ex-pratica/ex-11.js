@@ -30,4 +30,4 @@ if (salarioBase <= 1903.98) {
 let salarioLiquido = salarioBase - descontoIR;
 
 console.log(`Desconto IR: R$ ${descontoIR}.`);
-console.log(`Salário líquido: R$ ${salarioLiquido});
+console.log(`Salário líquido: R$ ${salarioLiquido}`);
