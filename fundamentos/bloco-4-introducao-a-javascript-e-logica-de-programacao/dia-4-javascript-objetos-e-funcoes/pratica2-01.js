@@ -1,29 +1,27 @@
 /*
-Usando o objeto abaixo, faça os exercícios a seguir:
+Spoiler-alert: para os exercícios do dia, os métodos split, join e reverse podem ser muito úteis.
 
-8 - Acesse as chaves nome e livrosFavoritos e faça um console.log no seguinte formato:
-"Julia tem 2 livros favoritos".
+1 - Crie uma função que receba uma string e retorne true se for um palíndromo, ou false, se não for.
+
+Exemplo de palíndromo: arara.
+verificaPalindrome('arara');
+Retorno esperado: true
+verificaPalindrome('desenvolvimento');
+Retorno esperado: false
 */
 
-let leitor = {
-  nome: 'Julia',
-  sobrenome: 'Pessoa',
-  idade: 21,
-  livrosFavoritos: [
-    {
-      titulo: 'O Pior Dia de Todos',
-      autor: 'Daniela Kopsch',
-      editora: 'Tordesilhas',
-    },
-  ],
+
+function verificaPalindrome(palavra) {
+  let palavraArray = palavra.split('');
+  let arrayReversa = palavraArray.reverse();
+  let palavraReversa = arrayReversa.join().replaceAll(',', '');
+
+  if (palavra === palavraReversa) {
+    return true;
+  } else {
+    return false;
+  };
 };
 
-leitor.livrosFavoritos.push({
-  titulo: 'Harry Potter e o Prisioneiro de Azkaban',
-  autor: 'JK Rowling',
-  editora: 'Rocco',
-})
 
-let quantidadeLivros = leitor.livrosFavoritos.length
-
-console.log(`${leitor.nome} tem ${quantidadeLivros} livros favoritos`);
+console.log(verificaPalindrome('ovo'));
