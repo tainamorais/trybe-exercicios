@@ -81,3 +81,37 @@ Agora que você criou muita coisa, vamos fazer algumas alterações e remoções
 */
 
 
+//1. Adicione a classe title na tag h1 criada.
+h1.classList.add('title');
+
+//2. Adicione a classe description nas 3 tags h3 criadas.
+let arrayH3 = document.querySelectorAll('main > h3');
+for (let index = 0; index < arrayH3.length; index += 1){
+  arrayH3[index].classList.add('description');
+}
+
+//3. Remova a section criado no passo 5 (aquele que possui a classe left-content). Utilize a função .removeChild().
+main.removeChild(section2);
+
+//4. Centralize a section criado no passo 6 (aquele que possui a classe right-content). Dica: para centralizar, basta configurar o margin-right: auto da section.
+section3.style.marginRight = 'auto';
+
+//5. Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content) para a cor verde.
+main.style.backgroundColor = 'green';
+
+//6. Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
+const ul = document.querySelector('ul');
+ul.lastChild.remove();
+ul.lastChild.remove();
+
+
+/* 
+Solução com for
+let ulTag = document.querySelector('ul')
+let newArray = document.querySelectorAll('ul > li');
+for (let index = 0; index < newArray.length; index += 1) {
+  if (newArray[index].innerText.includes('Nove') || newArray[index].innerText.includes('Dez')) {
+    ulTag.removeChild(newArray[index])
+  }
+}
+*/
