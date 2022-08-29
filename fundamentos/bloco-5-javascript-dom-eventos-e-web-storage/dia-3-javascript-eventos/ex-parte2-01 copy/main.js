@@ -32,10 +32,33 @@ input.addEventListener('input', function(event) {
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portfólio?
-
+const top3 = document.querySelector('#my-spotrybefy');
+function goToMyTop3() {
+  window.location.replace('https://github.com/tainamorais');
+}
+top3.addEventListener('dblclick', goToMyTop3)
 
 
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
 
+top3.addEventListener('mouseover', function(changeColorTop3) {
+  top3.style.color = 'yellow'
+})
 
+top3.addEventListener('mouseleave', function(unChangeColorTop3) {
+  top3.style.color = 'unset'
+})
+
+
+//Outra forma de fazer o número 5, no final, só fazer o addEventListener e atribuir a função.
+/* 
+function changeColorTop3() {
+  top3.style.color = 'yellow'
+}
+
+function unChangeColorTop3() {
+  top3.style.color = 'unset'
+}
+
+ */
