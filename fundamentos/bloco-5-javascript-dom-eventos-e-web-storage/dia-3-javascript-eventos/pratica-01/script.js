@@ -111,12 +111,14 @@ let arrayDays = document.querySelectorAll('.day');
 function zoomDayIn (event) {
   for (let index = 0; index < arrayDays.length; index += 1) {
     event.target.style.transform = 'scale(1.3)'
+    event.target.style.color = 'rgb(78, 78, 78)'
   }
 }
 
 function zoomDayOut (event) {
   for (let index = 0; index < arrayDays.length; index += 1) {
     event.target.style.transform = 'unset'
+    event.target.style.color = 'rgb(119, 119, 119)'
   }
 }
 
@@ -127,4 +129,7 @@ for (let index = 0; index < arrayDays.length; index += 1) {
 for (let index = 0; index < arrayDays.length; index += 1) {
   arrayDays[index].addEventListener('mouseleave', zoomDayOut);
 }
+
+
+//7. 
 
