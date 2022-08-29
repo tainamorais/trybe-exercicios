@@ -48,15 +48,15 @@ createDaysOfTheMonth();
 
 
 //2. Implemente uma função que crie dinamicamente um botão com o nome "Feriados".
-function createHolidayButton () {
+function createHolidayButton (buttonName) {
   let holidayBtn = document.createElement('button');
   let btnContainer = document.querySelector('.buttons-container');
   btnContainer.appendChild(holidayBtn);
   holidayBtn.id = 'btn-holiday';
-  holidayBtn.innerText = 'Feriados'
+  holidayBtn.innerText = buttonName
 }
 
-createHolidayButton();
+createHolidayButton('Feriados');
 
 
 //3. Implemente uma função que muda a cor de fundo dos dias que possuem a classe "holiday", quando clica no botão 'feriados.
@@ -76,4 +76,14 @@ function selectHoliday() {
 holidayBtn.addEventListener('click', selectHoliday)
 
 
-//4. 
+//4. Implemente uma função que crie dinamicamente um botão com o nome "Sexta-feira". Sua função deve receber como parâmetro a string "Sexta-feira".
+function createFridayButton (buttonName) {
+  let btnContainer = document.querySelector('.buttons-container');
+  let fridayBtn = document.createElement('button');
+  btnContainer.appendChild(fridayBtn);
+  fridayBtn.id = 'btn-friday'
+  fridayBtn.innerText = buttonName
+}
+
+createFridayButton('Sexta-feira');
+
