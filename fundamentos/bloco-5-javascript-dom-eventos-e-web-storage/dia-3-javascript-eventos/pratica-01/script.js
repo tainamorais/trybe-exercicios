@@ -15,6 +15,7 @@ createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
 
+//1. Crie um calendário dinamicamente
 function createDaysOfTheMonth() {
   let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
@@ -22,6 +23,7 @@ function createDaysOfTheMonth() {
 
   for (let index = 0; index < decemberDaysList.length; index += 1) {
     let liDay = document.createElement('li');
+    
     if (decemberDaysList[index] === 24 || decemberDaysList[index] === 31) {
       liDay.classList.add('day', 'holiday')
       ulDays.appendChild(liDay);
@@ -43,3 +45,34 @@ function createDaysOfTheMonth() {
 }
 
 createDaysOfTheMonth();
+
+
+//2. Implemente uma função que crie dinamicamente um botão com o nome "Feriados".
+function createHolidayButton () {
+  let holidayBtn = document.createElement('button');
+  let btnContainer = document.querySelector('.buttons-container');
+  btnContainer.appendChild(holidayBtn);
+  holidayBtn.id = 'btn-holiday';
+  holidayBtn.innerText = 'Feriados'
+}
+
+createHolidayButton();
+
+
+//3. Implemente uma função que muda a cor de fundo dos dias que possuem a classe "holiday", quando clica no botão 'feriados.
+let holidayBtn = document.querySelector('#btn-holiday');
+
+function selectHoliday() {
+  let arrayHoliday = document.querySelectorAll('.holiday')
+  for (let index = 0; index < arrayHoliday.length; index += 1) {
+    if (arrayHoliday[index].style.backgroundColor == 'rgb(238, 238, 238)') {
+      arrayHoliday[index].style.backgroundColor = 'rgb(216,191,216)';
+    } else {
+      arrayHoliday[index].style.backgroundColor = 'rgb(238, 238, 238)';
+    }
+  }
+}
+
+holidayBtn.addEventListener('click', selectHoliday)
+
+
