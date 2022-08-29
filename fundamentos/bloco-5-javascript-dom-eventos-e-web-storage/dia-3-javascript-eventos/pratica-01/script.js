@@ -105,3 +105,26 @@ function selectFriday() {
 
 fridayBtn.addEventListener('click', selectFriday);
 
+
+//6. 
+let arrayDays = document.querySelectorAll('.day');
+function zoomDayIn (event) {
+  for (let index = 0; index < arrayDays.length; index += 1) {
+    event.target.style.transform = 'scale(1.3)'
+  }
+}
+
+function zoomDayOut (event) {
+  for (let index = 0; index < arrayDays.length; index += 1) {
+    event.target.style.transform = 'unset'
+  }
+}
+
+for (let index = 0; index < arrayDays.length; index += 1) {
+  arrayDays[index].addEventListener('mouseover', zoomDayIn);
+}
+
+for (let index = 0; index < arrayDays.length; index += 1) {
+  arrayDays[index].addEventListener('mouseleave', zoomDayOut);
+}
+
