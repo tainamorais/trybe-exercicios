@@ -87,3 +87,21 @@ function createFridayButton (buttonName) {
 
 createFridayButton('Sexta-feira');
 
+
+//5. Implemente uma função que modifica o texto exibido nos dias que são Sexta-feira. Adicione ao botão "Sexta-feira" um evento de "click" e modifique o texto a ser exibido nos dias que são sextas-feiras.
+let fridayBtn = document.querySelector('#btn-friday');
+
+function selectFriday() {
+  let arrayFriday = document.querySelectorAll('.friday');
+  let fridaysNumbers = [4, 11, 18, 25];
+  for (let index = 0; index < arrayFriday.length; index += 1) {
+    if (arrayFriday[index].innerText !== 'Sextou!') {
+      arrayFriday[index].innerText = 'Sextou!';
+    } else {
+      arrayFriday[index].innerText = fridaysNumbers[index];
+    }
+  }
+}
+
+fridayBtn.addEventListener('click', selectFriday);
+
