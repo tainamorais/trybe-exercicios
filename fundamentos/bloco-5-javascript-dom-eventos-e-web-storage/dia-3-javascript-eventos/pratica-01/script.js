@@ -131,5 +131,29 @@ for (let index = 0; index < arrayDays.length; index += 1) {
 }
 
 
-//7. 
+//7. Implemente uma função que adicione uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa. O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+
+/* let taskInput = document.getElementById('task-input');
+taskInput.addEventListener('input', function(event) {
+  let taskDescription = event.target.value;
+  return taskDescription;
+}) */
+
+let btnAddTask = document.getElementById('btn-add');
+btnAddTask.addEventListener('click', function() {
+  let taskInput = document.getElementById('task-input');
+  if (taskInput.value === '') {
+    alert('Favor peencher um novo compromisso.')
+  } else {
+    let divTasks = document.querySelector('.my-tasks');
+    let newSpan = document.createElement('span');
+    newSpan.innerText = taskInput.value;
+    newSpan.style.display = 'block';
+    divTasks.appendChild(newSpan);
+    taskInput.value = '';
+  }
+})
+
+
+//8. Implemente uma função que adicione uma legenda com cor para a tarefa. Essa função deverá receber como parâmetro uma string ('cor') e criar dinamicamente um elemento de tag `<div>` com a classe `task`. O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada. O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
 
