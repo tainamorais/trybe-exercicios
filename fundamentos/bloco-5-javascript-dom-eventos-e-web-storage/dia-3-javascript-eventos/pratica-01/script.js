@@ -140,7 +140,9 @@ taskInput.addEventListener('input', function(event) {
 }) */
 
 let btnAddTask = document.getElementById('btn-add');
-btnAddTask.addEventListener('click', function() {
+let taskInput = document.getElementById('task-input');
+
+/* btnAddTask.addEventListener('click', function() {
   let taskInput = document.getElementById('task-input');
   if (taskInput.value === '') {
     alert('Favor peencher um novo compromisso.')
@@ -152,8 +154,38 @@ btnAddTask.addEventListener('click', function() {
     divTasks.appendChild(newSpan);
     taskInput.value = '';
   }
-})
+}) */
+
 
 
 //8. Implemente uma função que adicione uma legenda com cor para a tarefa. Essa função deverá receber como parâmetro uma string ('cor') e criar dinamicamente um elemento de tag `<div>` com a classe `task`. O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada. O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
 
+
+
+//Bônus
+/* 
+Se nenhum caractere for inserido no campo input, a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+*/
+
+function insertTaks() {
+  let taskInput = document.getElementById('task-input');
+  if (taskInput.value === '') {
+    alert('Favor peencher um novo compromisso.')
+  } else {
+    let divTasks = document.querySelector('.my-tasks');
+    let newSpan = document.createElement('span');
+    newSpan.innerText = taskInput.value;
+    newSpan.style.display = 'block';
+    divTasks.appendChild(newSpan);
+    taskInput.value = '';
+  }
+}
+
+btnAddTask.addEventListener('click', insertTaks)
+
+taskInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    insertTaks();
+  }
+})
