@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Formulário</h1>
+  <form action="" method="get">
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+      <label for="input-text">Digite seu nome:</label>
+      <input type="text" id="input-text" name="texto" placeholder="Digite aqui...">
+
+    </fieldset>
+
+    <br>
+    <div>
+    <input type="checkbox" value="volei" name="esporte" checked> Vôlei
+    <input type="checkbox" value="futebol" name="esporte"> Futebol
+    <input type="checkbox" value="handebol" name="esporte"> Handebol
+    </div>
+
+    <br>
+    <div>
+      <label for="localRJ">
+        <input id="localRJ" type="radio" name="local" value="RJ">
+        Rio de Janeiro
+      </label>
+      <label for="localSP">
+        <input id="localSP" type="radio" name="local" value="SP">
+        São Paulo
+      </label>
+      <label for="localMG">
+        <input id="localMG" type="radio" name="local" value="MG">
+        Minas Gerais
+      </label>
+    </div>
+
+    <br>
+    <label for="camisa">Escolha o tamanho da sua camiseta:</label>
+    <select name="camisa" id="camisa">
+      <option value="pp">PP</option>
+      <option value="p">P</option>
+      <option value="m">M</option>
+      <option value="g">G</option>
+      <option value="gg">GG</option>
+    </select>
+
+
+    <br><br>
+    <label for="imagem">Envie a foto do seu CPF: <input id="file" type="file"></label>
+
+    <br><br>
+    <label for="email">Digite seu e-mail: <input required id="email" type="email"></label>
+
+    <br><br>
+    <label for="senha">Digite sua senha: <input required id="senha" type="password"></label>
+
+
+    <br>
+    <br>
+    <textarea style="resize: none;" name="" id="" cols="100" rows="10">Digite aqui sua mensagem...</textarea>
+
+
+
+    <br>
+    <button type="submit">Enviar</button>
+
+  </form>
+</body>
+</html>
