@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+}
+
+.header-img {
+  width: 70px;
+}
+
+.gallery-img {
+  width: 150px;
+}
+
+.social-img {
+  width: 25px;
+  margin-left: 10px;
+}
+
+/* Início exercícios */
+
+/*
+Exercício 1
+Crie um cabeçalho para sua aplicação utilizando a tag header. Este cabeçalho deve possuir 3 elementos e estes devem ser posicionados utilizando Flexbox. O resultado deverá ser similar à estrutura da página "Trybe Tech-Gallery". Observe os exemplos abaixo:
+*/
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #373737;
+  color: #e6e6e6;
+  width: 100%;
+}
+
+header a {
+  color: #cccccc;
+}
+
+header a:hover {
+  color: #0fa36b;
+}
+
+/* 
+Exercício 2
+Implemente o conteúdo da primeira section. Esta seção deverá conter no mínimo um elemento de texto. Utilizando Flexbox, faça o posicionamento de acordo com o exemplo abaixo.
+*/
+.first-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  color: #373737;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.first-section p {
+  text-align: center;
+  width: 90%;
+}
+
+/* 
+Exercício 3
+Implemente o posicionamento da segunda section. Esta seção deverá conter no mínimo 6 imagens e um título para cada uma delas. Sinta-se livre para usar a imaginação e selecionar as imagens que preferir, só não esqueça de seguir a estrutura de posicionamento proposta.
+*/
+.second-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto 13px auto;
+  width: 50%;
+}
+
+.tech-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 220px;
+  background-color: #f1f1f1;
+  margin: 0 10px 15px 0;
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: 2px 3px rgba(198, 198, 198, 0.5);
+}
+
+.tech-img:hover {
+  transform: scale(1.01);
+}
+
+h4 {
+  color: rgb(104, 10, 130);
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+hr {
+  margin-top: 10px;
+  width: 25%;
+}
+
+/* 
+Exercício 4
+Por fim, faça o posicionamento do footer/rodapé, este é o ultimo elemento necessário para que nossa aplicação fique completa. O rodapé deverá conter no mínimo 2 elementos. Para o exemplo, foram adicionadas imagens que redirecionam o usuário para as redes sociais da Trybe.
+*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+  height: 50px;
+  width: 100%;
+}
+
+footer a {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+footer a:hover {
+  transform: scale(1.1);
+}
