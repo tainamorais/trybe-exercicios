@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  color: #223a3a;
+  background-color: #f5f3f1;
+}
+
+header p{
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  color: #e8ded2;
+  background-color: #223a3a;
+  padding: 20px 5px;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e8ded2;
+  padding: 10px 5px;
+}
+
+header nav ul li {
+  list-style: none;
+  padding: 7px 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+header nav ul li:hover {
+  background-color: #223a3a;
+  color: #e8ded2;
+  border-radius: 4px;
+}
+
+.aside-one, .aside-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 5px;
+}
+
+.aside-one, .aside-two {
+  background-color: #e8ded2;
+}
+
+.aside-one h2, .aside-two h2{
+  font-size: 1.3rem;
+  padding: 5px;
+  margin: 5%;
+}
+
+.aside-one ul, .aside-two ul{
+  margin: 5%;
+}
+
+.aside-one ul li, .aside-two ul li{
+  list-style: none;
+  padding-bottom: 9px;
+  margin-bottom: 7px;
+}
+
+article {
+  margin: 5%;
+}
+
+article h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 5%;
+}
+
+article p{
+  margin: 5%;
+}
+
+footer {
+  background-color: #223a3a;
+  color: #f5f3f1;
+  text-align: center;
+  padding: 10px;
+}
+
+footer p, footer h3 {
+  margin: 3%;
+}
+
+footer h3 {
+  font-size: 0.9rem;
+}
+
+footer p {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+
+@media screen and (min-width: 700px) {
+  header nav ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .div-aside{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #e8ded2;
+  }
+
+  .aside-one h2, .aside-two h2{
+    font-size: 1.3rem;
+  }
+
+  .aside-one ul li, .aside-two ul li{
+    font-size: 1rem;
+  }
+
+
+}
+
+
+@media screen and (min-width: 1000px) {
+  header nav ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 600px;
+  }
+  header nav ul li {
+    margin-right: 10px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  article p {
+    width: 70%;
+    margin: 20px;
+  }
+
+  .aside-two {
+    align-self: center;
+  }
+}
