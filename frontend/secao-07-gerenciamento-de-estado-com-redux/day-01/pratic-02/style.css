@@ -1,0 +1,17 @@
+.dark {
+  color: goldenrod;
+  background-color: #1d1d1d;
+}
+
+.light {
+  color: rgb(1, 67, 67);
+  background-color: #f2f2f2;
+}
+
+.btnLight {
+  background-color: aquamarine;
+}
+
+.btnDark {
+  background-color: gold;
+}
