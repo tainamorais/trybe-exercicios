@@ -3,7 +3,7 @@ import { REQUEST_ISS_LOCATION, RECEIVE_ISS_LOCATION_SUCCESS, RECEIVE_ISS_LOCATIO
 const INITIAL_STATE = {
   latitude: 0,
   longitude: 0,
-  isFetching: true,
+  isFetching: false,
   error: '',
 }
 
