@@ -1,0 +1,33 @@
+Montar docker com sql
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/4dafa2cb-01f4-45a5-bc69-07d567eb32a2/recording/5fa70ac0-4394-4bc0-afc8-eb2ee5aa6858
+
+Aula msc parte 1
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/3013dcdc-9314-44e3-8df6-8f7c37e64bcd/recording/cfdd743e-379d-4f56-8b21-4d89ca44449e
+
+Aula msc parte 2
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/73582a12-b27a-42b1-90a8-006fe728c7ad/recording/13c327a2-5c42-4c7a-b1b5-bf46e82dba1e
+
+docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=docker -d -p 3306:3306 mysql
+
+28min
+
+docker-compose up -d
+docker exec -it offices_api sh
+npm i express
+npm i nodemon -D
+npm i mysql2
+
+
+1. Faz index
+2. Faz controller
+3. Faz Service
+4. Faz Model
+
+Revisão - Testes na camada Service
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/73582a12-b27a-42b1-90a8-006fe728c7ad/recording/987cee2d-f662-47c9-9f4d-87d485f7e07f
+
+Revisão - Testes na camada Controller
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/73582a12-b27a-42b1-90a8-006fe728c7ad/recording/b4446df1-0b27-4290-80bd-bde793b69095
+
+Revisão - Testes na camada de Model
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/73582a12-b27a-42b1-90a8-006fe728c7ad/recording/6285acb5-c015-4d4d-b3d9-486a10d65679
