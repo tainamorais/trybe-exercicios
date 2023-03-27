@@ -1,0 +1,44 @@
+ESSA AULA - Essa é realmente do zero, até configurações de ambiente
+Mentoria de revisão com MSC do zero em JS
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/f87fd08a-6753-44b4-a654-3dbaaca898f4/recording/7797395d-76fa-4e86-8394-c87c42b563c3
+
+npm init -y
+npm i -D --save-exact eslint@6.8.0 eslint-config-trybe-backend@1.0.1 nodemon@2.0.15 
+
+docker-compose up -d
+docker exec -it movies bash
+npm i express
+npm i nodemon -D
+npm i mysql2
+npm install dotenv
+npm install -E joi@17.6.0 
+npm install express-async-errors (não sei)
+
+
+1. Faz index
+2. Faz controller
+3. Faz Service
+4. Faz Model
+
+
+    environment:
+      - MYSQL_USER: root
+      - MYSQL_PASSWORD: password
+      - MYSQL_HOST: db
+      - PORT: '3000'
+      - HOST: store_manager
+      node:16-alpine
+
+
+TESTE
+{
+  "title": "Rocky I",
+  "directedBy": "Silvester Stallone",
+  "releaseYear": 1976
+}
+
+{
+  "title": "Instinto Selvagem",
+  "directedBy": "Paul Verhoeven",
+  "releaseYear": 1992
+}
