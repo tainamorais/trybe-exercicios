@@ -1,0 +1,31 @@
+Detalhes do projeto
+
+1. Crie uma nova pasta e inicie um projeto com Express:
+npm init -y
+npm install -E express@4.17.1
+
+2. Crie o arquivo index.js;
+
+3. Instale o pacote sequelize e o mysql2:
+npm install -E sequelize@6.3.4 mysql2@2.1.0
+
+4. Instale o pacote sequelize-cli como uma dependência de desenvolvimento:
+npm install --save-dev --save-exact sequelize-cli@6.2.0
+
+5. Use o Sequelize-CLI para iniciar a configuração do ORM:
+(Esse comando vai gerar as pastas models, seeder, config e migration dentro do seu projeto.)
+npx sequelize-cli init
+
+
+Criar tabela
+npx sequelize migration:generate --name create-books
+
+Ajustar arquivo migrations
+
+Mandar para DB
+npx sequelize db:migrate
+
+node index.js
+npm run dev
+
+TIVE QUE DESISTIR E ABRIR OUTRO POR UM ERRO QUE NÃO ENCONTRAVA
