@@ -1,8 +1,16 @@
 const express = require('express');
-const courseRoute = require('./routes');
+const { courseRoute, studentRoute } = require('./routes');
 
 const app = express();
 
-app.use('/course', courseRoute);
+// BodyParser
+/*
+Quando não coloca:
+Cannot destructure property 'name' of 'req.body' as it is undefined
+*/
+app.use(express.json());
+
+app.use('/courses', courseRoute);
+app.use('/students', studentRoute);
 
 module.exports = app;

@@ -77,7 +77,7 @@ npx sequelize-cli migration:create --name add-column-duration-table-course
 20º: Para subir esse novo arquivo migration criado (ajuste na tabela) no DB:
 npx sequelize-cli db:migrate
 
-21º: E isso precisa ser informado na model, essa alteração. Vai no arquivo da model e isnere este novo campo.
+21º: E isso precisa ser informado na model, essa alteração. Vai no arquivo da model e insere este novo campo.
 
 22º: Agora precisamos popular dados no DB. Para criar seed (depois ajustar arquivo):
 npx sequelize-cli seed:create --name courses
@@ -85,6 +85,29 @@ npx sequelize-cli seed:create --name courses
 23º: Após ajustar arquivo, subir a seed:
 npx sequelize-cli db:seed:all
 OBS: se quiser reverter: npx sequelize-cli db:seed:undo
+
+
+- Criar tabela students
+npx sequelize-cli migration:create --name create-students
+
+- Subir tabela para DB
+npx sequelize-cli db:migrate
+
+- Depois, criar model
+
+- Popular dados em students
+npx sequelize-cli seed:create --name courses
+
+- Subir as seeders (subir todas as seeders)
+npx sequelize-cli db:seed:all
+(subir uma seed específica)
+npx sequelize-cli db:seed --seed src/seeders/20230330130353-students.js
+(ou ainda)
+npx sequelize-cli db:seed --seed src/seeders/*-students.js
+
+
+
+
 
 node src/server.js
 npm run dev

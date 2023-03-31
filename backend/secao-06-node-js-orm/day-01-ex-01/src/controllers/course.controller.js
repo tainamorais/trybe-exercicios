@@ -7,7 +7,8 @@ const getAll = async (_req, res) => {
 
 const getById = async (req, res) => {
   const { id } = req.params;
-  const course = await courseService.getById(id);
+  const { withStudents } = req.query;
+  const course = await courseService.getById(id, withStudents === 'true');
   res.status(200).json(course);
 };
 
@@ -22,10 +23,10 @@ const getByIdAndName = async (req, res) => {
 };
 
 const createCourse = async (req, res) => {
-    const { name, description, creation_date, active, duration } = req.body;
-    const newCourse = await courseService.createCourse(name, description, creation_date, active, duration);
+  const { name, description, creation_date, active, duration } = req.body;
+  const newCourse = await courseService.createCourse(name, description, creation_date, active, duration);
 
-    return res.status(201).json(newCourse);
+  return res.status(201).json(newCourse);
 };
 
 const updateCourse = async (req, res) => {

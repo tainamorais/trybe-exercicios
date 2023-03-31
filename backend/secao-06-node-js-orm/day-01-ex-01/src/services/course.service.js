@@ -5,8 +5,12 @@ const getAll = async () => {
   return courses;
 };
 
-const getById = async (id) => {
+const getById = async (id, withStudents) => {
   const course = await Course.findByPk(id);
+  if (withStudents) {
+    const students = await course.getStudents();
+    course.dataValues.students = students;
+  }
   return course;
 };
 
@@ -28,7 +32,6 @@ const updateCourse = async (id, name, description, creation_date, active, durati
     { where: { id } },
   );
 
-  console.log(updatedCourse); // confira o que é retornado quando o user com o id é ou não encontrado;
   return updatedCourse;
 };
 
