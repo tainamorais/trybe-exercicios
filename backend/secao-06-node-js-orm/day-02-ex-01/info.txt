@@ -2,6 +2,9 @@ https://trybecourse.slack.com/archives/C03G5SRQSLE/p1674237086689029
 
 https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/module/94d0e996-1827-4fbc-bc24-c99fb592925b/section/0ca77b1d-4770-4646-8368-167d2305e763/day/0da9bd44-abf6-43d6-96b9-9614274e6c36/lesson/ed46dd6e-bbb3-432d-92a4-b272e42437a9
 
+OBS: Padrão sequelize. Todas as migrations e models vão começar com letra maiúscula. A migration será no plural e a model será no singular.
+
+
 npm init -y
 npm i sequelize
 npm i -D sequelize-cli
@@ -11,11 +14,18 @@ npm i mysql2
 criar pasta src e entrar nela e dar:
 npx sequelize-cli init
 
-docker container run --name container-mysql-2 -e MYSQL_ROOT_PASSWORD=senha_mysql -d -p 3306:3306 mysql:8.0.29
+Voltar à pasta rais do projeto
+
+Mudar nome container mysql
+docker container run --name container-mysql-060201 -e MYSQL_ROOT_PASSWORD=senha_mysql -d -p 3306:3306 mysql:8.0.29
+
+Ajustar arquivos padrões
+models/index e sequelizerc tem que ser config.js
 
 env $(cat .env) npx sequelize db:create
 
-docker exec -it container-mysql-2 bash
+Tomar cuidado com nome container mysql
+docker exec -it container-mysql-060201 bash
 
 mysql -u root -p
 
@@ -30,4 +40,42 @@ npm i mocha@10.0.0 chai@4.3.4 sinon@14.0.0 chai-http@4.3.0 -D -E
 npm i sequelize-test-helpers@1.4.3 -D -E
 
 
-OBS: Padrão sequelize. Todas as migrations e models vão começar com letra maiúscula. A migration será no plural e a model será no singular.
+
+Criar tabela employees
+npx sequelize migration:generate --name create-employees
+
+Criar tabela migration address
+npx sequelize migration:generate --name create-addresses
+
+Vamos executar o seguinte comando para gerar as migrations:
+env $(cat .env) npx sequelize db:migrate
+
+Ok, mas como criamos essa associação no sequelize? 🤔
+Com as migrations criadas, vamos para os models criar essas associações!
+
+Para criar os dois seeders, utilize os comandos abaixo:
+npx sequelize seed:generate --name employees
+npx sequelize seed:generate --name addresses
+
+Ajuste os arquivos seeders. Depois, utilize o comando abaixo para executar os seeders:
+env $(cat .env) npx sequelize db:seed:all
+
+OBS:
+Existe uma possibilidade de você se deparar com o erro “Cannot add or update a child row: a foreign key constraint fails”. Isso acontece porque precisamos que a seed de employees rode primeiro que a de addresses, de forma de que a segunda possa pegar a chave que usa como foreign key da primeira.
+
+npm run dev
+localhost:3001/employees
+
+
+OBS: hasOne X belongsTo
+A entidade que tiver a primaryKey vai pertencer a outra.
+A tabela que tiver a informação vinda de outra tabela, pertence a esta outra.
+Address tem employee_id como primaryKey, portanto, na model de address, address belongsTo email.
+Email hasOne address. Email não tem address como primary key.
+
+No caso dos relacionamentos 1:N, não há grande diferença na maneira como criamos as associações. Caso cada employee possuísse vários address, bastaria declarar seu model da seguinte forma:
+Employee.hasMany(models.Address)...
+
+
+
+
