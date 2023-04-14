@@ -1,0 +1,178 @@
+
+01º: Para iniciar o projeto e criar package.json
+npm init -y
+
+02º: Para criar package-lock json (estou fazendo assim, mas é a única etapa sem certeza)
+npm i express@4.17.1 --save-exact
+
+03º Criar o arquivo .gitignore e inserir os que ficarão de fora quaando aplicação subir
+node_modules
+
+04º Criar o arquivo .env e inseir as devidas configurações
+DB_USER=root
+DB_PASSWORD=password
+DB_NAME=orm_trybe
+DB_HOST=container_mysql
+
+05º Ver estrutura de acordo com necessidade
+Elaborar docker-compose.yml
+
+06º: No terminal, digitar este comando para criar container
+docker-compose up -d
+
+07º: No terminal, digitar este comando para entrar no terminal do container
+docker exec -it api_jwt_02 bash
+
+08º: No terminal do container, instalar as dependências necessárias
+npm i sequelize mysql2 dotenv express express-async-errors
+(npm install -E sequelize@6.3.4) - sozinho pelo course
+
+09º: No terminal do container, instalar as dependências de desenvolvimeto necessárias
+npm i -D sequelize-cli nodemon
+
+10º: Criar arquivo .sequelizerc
+Elaborar a estrutura do arquivo para que tudo fique dentro da pasta src
+
+11º: No terminal do container, inserir este comando para que a estrutura de pastas sejam criadas
+npx sequelize-cli init
+
+- Instalar a biblioteca de JWT
+npm i -E jsonwebtoken@9.0.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--- Cópia do outro arquivo
+
+
+12º: No arquivo config.js, inserir module.exports = e o require('dotenv').config()
+require('dotenv').config();
+module.exports = {...};
+
+13º: Fazer as seguintes alterações em "development":
+"password": null, para "password": process.env.DB_PASSWORD
+"username": "root", para "username": process.env.DB_USERNAME
+"database": "database_development", para "database": process.env.DB_NAME
+"host": "127.0.0.1", para "host": process.env.DB_HOST
+OBS: Olhar as configs deste arquivo e repetir para os demais
+
+14º: Entrar no workbench
+
+15º: Rodar no terminal do container o comando para criar do DB e depois atualizar o workbench
+npx sequelize-cli db:create
+
+16º: Rodar no terminal do container o comando para criar tabela e campos
+npx sequelize-cli model:create --name Course --attributes name:string,description:string,creation_date:date,active:boolean
+OBS: Terá sido criada um arquivo model e um migration. O workbench ainda não foi atualizado.
+
+17º: Ajustar arquivo criado na model.
+
+18º: Para subir esse arquivo migration criado (tabela) no DB:
+npx sequelize-cli db:migrate
+OBS: para desfazer a última migraton: npx sequelize-cli db:migrate:undo 
+
+19º: Para inserir uma coluna em uma tabela já criada (e depois ajustar arquivo migration):
+npx sequelize-cli migration:create --name add-column-duration-table-course
+
+20º: Para subir esse novo arquivo migration criado (ajuste na tabela) no DB:
+npx sequelize-cli db:migrate
+
+21º: E isso precisa ser informado na model, essa alteração. Vai no arquivo da model e insere este novo campo.
+
+22º: Agora precisamos popular dados no DB. Para criar seed (depois ajustar arquivo):
+npx sequelize-cli seed:create --name courses
+
+23º: Após ajustar arquivo, subir a seed:
+npx sequelize-cli db:seed:all
+OBS: se quiser reverter: npx sequelize-cli db:seed:undo
+
+
+- Criar tabela students
+npx sequelize-cli migration:create --name create-students
+
+- Subir tabela para DB
+npx sequelize-cli db:migrate
+
+- Depois, criar model
+
+- Popular dados em students
+npx sequelize-cli seed:create --name courses
+
+- Subir as seeders (subir todas as seeders)
+npx sequelize-cli db:seed:all
+(subir uma seed específica)
+npx sequelize-cli db:seed --seed src/seeders/20230330130353-students.js
+(ou ainda)
+npx sequelize-cli db:seed --seed src/seeders/*-students.js
+
+
+
+- Criar uma tabela (criando migration e model de uma só vez)
+npx sequelize-cli model:create --name Module --attributes name:string,description:string,duration:decimal,qtBlock:decimal
+
+- Criar seed para popular a tabela module
+npx sequelize-cli seed:create --name Modules
+
+- Depois de ajeitar os arquivos migrations, model e seed, executar:
+npx sequelize db:migrate
+(rodar migrations)
+
+npx sequelize db:seed --seed src/seeders/*-Modules.js
+(para não rodar todas as seeds, somente a específica)
+
+
+
+- Criar a tabela que relaciona cursos com módulos (tabela intermediária que só tem foreign key)
+npx sequelize-cli migration:create --name create-courses-modules-table
+
+- Depois de ajustar a migration, rodar:
+npx sequelize db:migrate
+
+- A model de uma tabela intermediária tem o segundo parâmetro vazio, pois só tem foreign key.
+- Após ajuste da model, vamos criar a seed para popular a tabela criada:
+npx sequelize seed:create --name courses-modules
+
+- Depois de completar a seed, rodar a migration:
+npx sequelize db:migrate
+
+- E rodar a seed:
+npx sequelize db:seed --seed src/seeders/*-courses-modules.js
+
+
+
+
+
+
+- Se sair e não tiver mais nada no banco:
+npx sequelize db:create
+(cria banco)
+
+npx sequelize db:migrate
+(cria tabelas)
+
+npx sequelize db:seed:all
+(popula tabelas)
+
+
+
+
+
+
+
+
+node src/server.js
+npm run dev

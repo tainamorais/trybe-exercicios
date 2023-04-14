@@ -23,8 +23,8 @@ const getByIdAndName = async (req, res) => {
 };
 
 const createCourse = async (req, res) => {
-  const { name, description, creation_date, active, duration } = req.body;
-  const newCourse = await courseService.createCourse(name, description, creation_date, active, duration);
+  const { name, description, creation_date, active, duration, modules } = req.body;
+  const newCourse = await courseService.createCourse(name, description, creation_date, active, duration, modules);
 
   return res.status(201).json(newCourse);
 };

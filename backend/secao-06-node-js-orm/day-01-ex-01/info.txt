@@ -107,6 +107,57 @@ npx sequelize-cli db:seed --seed src/seeders/*-students.js
 
 
 
+- Criar uma tabela (criando migration e model de uma só vez)
+npx sequelize-cli model:create --name Module --attributes name:string,description:string,duration:decimal,qtBlock:decimal
+
+- Criar seed para popular a tabela module
+npx sequelize-cli seed:create --name Modules
+
+- Depois de ajeitar os arquivos migrations, model e seed, executar:
+npx sequelize db:migrate
+(rodar migrations)
+
+npx sequelize db:seed --seed src/seeders/*-Modules.js
+(para não rodar todas as seeds, somente a específica)
+
+
+
+- Criar a tabela que relaciona cursos com módulos (tabela intermediária que só tem foreign key)
+npx sequelize-cli migration:create --name create-courses-modules-table
+
+- Depois de ajustar a migration, rodar:
+npx sequelize db:migrate
+
+- A model de uma tabela intermediária tem o segundo parâmetro vazio, pois só tem foreign key.
+- Após ajuste da model, vamos criar a seed para popular a tabela criada:
+npx sequelize seed:create --name courses-modules
+
+- Depois de completar a seed, rodar a migration:
+npx sequelize db:migrate
+
+- E rodar a seed:
+npx sequelize db:seed --seed src/seeders/*-courses-modules.js
+
+
+
+
+
+
+- Se sair e não tiver mais nada no banco:
+npx sequelize db:create
+(cria banco)
+
+npx sequelize db:migrate
+(cria tabelas)
+
+npx sequelize db:seed:all
+(popula tabelas)
+
+
+
+
+
+
 
 
 node src/server.js
