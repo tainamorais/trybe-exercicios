@@ -1,0 +1,49 @@
+Aula com Guilherme
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/4dafa2cb-01f4-45a5-bc69-07d567eb32a2/recording/a3c1de9d-736f-4e7b-a33f-71b4621a4faa
+
+Mesma aula com Zambelli
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/4dafa2cb-01f4-45a5-bc69-07d567eb32a2/recording/167cf3e8-19d1-488b-943d-01f7ccc804c3
+
+acessar mysql
+mysql -u root -p
+
+Ao dar enter, pede senha: password
+
+Proto, dentro do mysql. Agora, podemos dar o comando dentro do script.sql, para criar e preencher tabelas.
+
+Para mostrar o banco:
+SHOW DATABASES;
+SHOW TABLES;
+
+Dentro do container:
+npm init -y
+
+Principal dependência para rodar um projeto em TypeScript
+npm install -D typescript@4.4.4
+
+Instalar express
+npm i express
+
+Para rodar projeto TypeScript e cria tsconfig.json
+npx tsc --init
+
+(mudar target para es6, pois é compatível com node 16 alpine deste projeto, rootDir e outDir)
+
+Para transpilar o index.ts se tudo estiver correto. No package.json tem que ter o build configurado como tsc.
+npm run build
+
+Para rodar (tem que ter o start configurado no package.json)
+npm start
+
+npm i -D ts-node-dev
+npm i -D ts-node
+
+Para instalar os types do express
+npm i -D @types/express
+
+npm i -D @types/node
+
+Connection pool
+npm install mysql2
+
+npm install dotenv

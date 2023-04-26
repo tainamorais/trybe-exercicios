@@ -1,0 +1,32 @@
+1. 
+npm init -y
+
+2. 
+npm i axios@1.2.2 ts-node@10.2.1
+
+3. 
+npm i typescript@4.4.4 -D -E
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS...
+4. Programa pronto, vamos compilar o nosso programa:
+npx tsc
+
+5. Nossos arquivos JavaScript foram gerados dentro do diretório dist. Agora, basta rodar o nosso programa compilado utilizando o Node.
+node ./dist/index.js
+
+npx ts-node playground.ts
+
+ele pede para instalar ts-node

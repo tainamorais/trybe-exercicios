@@ -1,0 +1,25 @@
+A seguir, vamos inicializar nosso projeto Node, instalar o TypeScript, o módulo npm com a configuração base do TSConfig para o Node 16 (ou superior) e criar nosso tsconfig.json.
+
+1. 
+npm init -y
+
+2. 
+npm install -D -E typescript@4.4.4 @tsconfig/node16@1.0
+
+3. 
+touch tsconfig.json
+
+4. Por fim, vamos instalar o pacote npm com as definições de tipos para o Node.js.
+npm install -D -E @types/node@16.18.23
+
+5. Em seguida, vamos criar dois arquivos: um chamado index.ts, que usaremos para testar o nosso módulo, e um chamado exercises.ts, onde faremos a implementação do nosso módulo com algumas funções.
+touch index.ts && touch exercises.ts
+
+6. Programa pronto, vamos compilar o nosso programa:
+npx tsc
+
+7. Nossos arquivos JavaScript foram gerados dentro do diretório dist. Agora, basta rodar o nosso programa compilado utilizando o Node.
+node ./dist/index.js
+
+
+

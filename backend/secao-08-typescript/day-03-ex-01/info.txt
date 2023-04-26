@@ -1,0 +1,92 @@
+npm init -y
+
+
+02. O próximo passo é adicionar o suporte ao TypeScript ao nosso projeto, para isso vamos instalar o pacote npm do TypeScript como dependência de desenvolvimento do nosso projeto. Lembrando que em produção sempre iremos usar o código compilado de TypeScript para JavaScript, por isso utilizamos como dependência de desenvolvimento.
+npm install -D -E typescript@4.4.4
+
+
+03. Agora vamos criar nosso arquivo tsconfig.json com a seguinte configuração:
+touch tsconfig.json
+
+
+04. Nosso próximo passo será instalar como dependência de desenvolvimento o pacote npm de declarações de tipos para os módulos padrões do Node.
+npm install -D -E @types/node@16.18.23
+
+
+05. Por último vamos instalar o ts-node-dev, que é um pacote de utilitários que vai nos ajudar a executar o servidor de desenvolvimento, escrito em TypeScript, diretamente no terminal, sem necessidade de compilarmos o código em JavaScript, além de reiniciar o servidor a cada alteração que fizermos, sem a necessidade de encerrarmos o processo e o iniciarmos novamente.
+npm install -D -E ts-node-dev@1.1
+
+OBS:
+É muito importante entendermos o porquê da instalação de cada um desses pacotes. Já nas nossas próximas configurações de projetos Node + TypeScript, podemos fazer todas as instalações em um único comando:
+npm install -D -E typescript@4.4.4 @types/node@16.18.23 ts-node-dev@1.1
+
+
+06. Vamos agora instalar as nossas dependências necessárias para iniciarmos nossa aplicação. Primeiro instalamos o pacote do Express:
+npm install express@4.17
+
+
+07. E posteriormente instalamos o pacote npm de declarações de tipos do Express:
+npm install -D @types/express@4.17
+
+
+08. Vamos criar um arquivo com os códigos de status das respostas http que serão utilizados na aplicação de exemplo desta aula. O arquivo será nomeado statusCodes.ts.
+touch statusCodes.ts
+
+OBS: Vamos criar nesse arquivo um objeto responsável por identificar a numeração relativa às respostas http:
+
+
+09. Agora vamos criar a nossa aplicação Express. Para isso, crie um arquivo chamado index.ts na raiz do diretório do projeto com o seguinte conteúdo:
+touch index.ts
+
+
+10. Para termos certeza que esse código funciona, vamos criar alguns scripts no nosso package.json e rodar a aplicação:
+...
+"scripts": {
+    "start": "npm run build && node ./dist/index.js",
+    "dev": "tsnd index.ts",
+    "build": "tsc"
+ },
+...
+
+OBS: Scripts:
+
+start: executa o build da aplicação e depois roda o arquivo compilado dentro da pasta dist;
+dev: executa a aplicação em modo de desenvolvimento utilizando o ts-node-dev;
+build: executa a compilação do projeto utilizando o TSC.
+
+
+11. Agora vamos executar a aplicação utilizando o script start:
+npm start
+
+OBS. Ao acessarmos no nosso navegador o caminho http://localhost:8000/ conseguimos ver a mensagem da nossa rota / : “Express + TypeScript”.
+
+12. Além disso, vamos instalar uma lib que faz o tratamento de erros disparar diretamente o middleware de erro sem a necessidade de colocar try/catch ao longo do seu código. Essa lib é a express-async-errors.
+npm install express-async-errors@3.1
+
+13. Para nosso setup ficar 100% vamos instalar mais duas libs que usaremos um pouco mais a frente. Elas nos ajudarão a disparar erros específicos para serem tratados no middleware de erro.
+npm install restify-errors@8.0 @types/restify-errors@4.3
+
+
+
+OBS. Ufa! Agora sim! Com o setup finalizado, vamos começar a implementar nosso CRUD.
+
+Dando continuidade à nossa aplicação vamos criar um CRUD de livros 📚. Primeiramente criaremos uma interface para representar um livro no nosso sistema. Ela irá possuir as seguintes propriedades:
+
+id: A chave primária da tabela. Como é um campo que não será obrigatório, vamos adicioná-la como um atributo opcional.
+title: O título do livro;
+price: O preço de venda do livro;
+author: O nome do autor do livro;
+isbn: O registro ISBN do livro.
+
+
+
+
+
+
+
+
+
+
+
+
+npm start
