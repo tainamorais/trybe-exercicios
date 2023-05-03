@@ -1,0 +1,41 @@
+Aula 9.4 - Issac Batista
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/21267cf2-101f-4048-90d0-88ad9bebaddc/recording/8587adeb-3cc3-4c55-8bca-176d4ec933b8
+
+01. Startar projeto:
+npm init -y
+
+02. Instalar typescript e node js
+npm i -D typescript ts-node
+
+03. Iniciar com tsc para ter arquivo de configuração tsconfig
+npx tsc --init
+
+04. Instalar nodemon
+npm i -D nodemon
+
+05. Acertar package.json para dev com nodemon
+
+06. Instala dependências
+npm install
+
+07. Cria um arquivo index.ts, coloca um console.log e testa para ver a saída
+npm run dev
+
+Outros 2 inicializadores de typescript além do nodemon (ts node dev E tsx):
+npm i -D ts-node-dev tsx
+
+
+docker-compose up
+
+npm install mysql2
+
+acessar mysql
+mysql -u root -p
+
+Ao dar enter, pede senha: password
+
+Proto, dentro do mysql. Agora, podemos dar o comando dentro do script.sql, para criar e preencher tabelas.
+
+Para mostrar o banco:
+SHOW DATABASES;
+SHOW TABLES;

@@ -1,0 +1,31 @@
+Gravação: Aula - BE 9.1 - Introdução a P.O.O
+
+https://app.betrybe.com/learn/course/5e938f69-6e32-43b3-9685-c936530fd326/live-lectures/4dafa2cb-01f4-45a5-bc69-07d567eb32a2/recording/3b85fbf4-fcb4-47c9-ac75-992e5ddb83b8
+
+Implementar diagrama UML - Sistema de pagamento
+Alterar valores da conta usando get e set
+
+01. Startar projeto:
+npm init -y
+
+02. Instalar typescript e node js
+npm i -D typescript ts-node
+
+03. Iniciar com tsc para ter arquivo de configuração tsconfig
+npx tsc --init
+
+04. Instalar nodemon
+npm i -D nodemon
+
+05. Acertar package.json para dev com nodemon
+
+06. Instala dependências
+npm install
+
+07. Cria um arquivo index.ts, coloca um console.log e testa para ver a saída
+npm run dev
+
+08. 
+
+
+
